@@ -1,24 +1,26 @@
 {
-    "name":"SocialBox",
+    "name":"Socialite",
     "version":"1.0.0",
     "author":"Francesco Pepe",
-    "slug":"socialbox",
-    "type":"modules",
+    "location":"",
+    "directory":"",
+    "createPackageDirectory":true,
+    "packageDirectory":"",
+    "homepage":"https://github.com/Tropicalista/socialite",
     "documentation":"http://wiki.coldbox.org",
     "repository":{
         "type":"git",
-        "url":"https://github.com/Tropicalista/socialbox"
+        "url":"https://github.com/Tropicalista/socialite"
     },
-    "shortDescription":"An oauth2 provider module",
-    "license":[
-        {
-            "type":"Apache2",
-            "url":"http://www.apache.org/licenses/LICENSE-2.0.html"
-        }
-    ],
-    "dependencies":{
-        "cbstorages":"1.0.0"
-    },    
+    "bugs":"",
+    "slug":"socialite",
+    "shortDescription":"An oauth2 module",
+    "description":"",
+    "instructions":"",
+    "changelog":"",
+    "type":"modules",
+    "keywords":"oauth2,oauth2 login",
+    "private":false,
     "engines":[
         {
             "type":"railo",
@@ -28,5 +30,58 @@
             "type":"adobe",
             "version":">9.02"
         }
-    ]
+    ],
+    "defaultEngine":"",
+    "defaultPort":0,
+    "projectURL":"",
+    "license":[
+        {
+            "type":"Apache2",
+            "url":"http://www.apache.org/licenses/LICENSE-2.0.html"
+        }
+    ],
+    "contributors":[
+        
+    ],
+    "dependencies":{
+        "cbstorages":"1.0.0"
+    },
+    "devDependencies":{
+        
+    },
+    "installPaths":{
+        
+    },
+    "ignore":[
+        
+    ],
+    "testbox":{
+        "runner":[
+            {
+                "default":""
+            }
+        ],
+        "labels":[
+            
+        ],
+        "reporter":"",
+        "reporterResults":"",
+        "bundles":[
+            ""
+        ],
+        "directory":{
+            "mapping":"",
+            "recurse":true
+        },
+        "watchers":[
+            
+        ],
+        "notify":{
+            "emails":[
+                
+            ],
+            "growl":"",
+            "url":""
+        }
+    }
 }

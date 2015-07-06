@@ -1,0 +1,32 @@
+{
+    "name":"SocialBox",
+    "version":"1.0.0",
+    "author":"Francesco Pepe",
+    "slug":"socialbox",
+    "type":"modules",
+    "documentation":"http://wiki.coldbox.org",
+    "repository":{
+        "type":"git",
+        "url":"https://github.com/Tropicalista/socialbox"
+    },
+    "shortDescription":"An oauth2 provider module",
+    "license":[
+        {
+            "type":"Apache2",
+            "url":"http://www.apache.org/licenses/LICENSE-2.0.html"
+        }
+    ],
+    "dependencies":{
+        "cbstorages":"1.0.0"
+    },    
+    "engines":[
+        {
+            "type":"railo",
+            "version":">4.1"
+        },
+        {
+            "type":"adobe",
+            "version":">9.02"
+        }
+    ]
+}

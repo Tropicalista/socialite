@@ -8,3 +8,13 @@ Currently support:
 * Google
 * Linkedin
 * Github
+
+Usage:
+
+`socialite.init().with('facebook').redirect()`
+
+This will prompt you to authentication page. Then simply:
+
+`socialite.with(rc.provider).user(rc.code)`
+
+And you will get user data.

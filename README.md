@@ -15,6 +15,6 @@ Usage:
 
 This will prompt you to authentication page. Then simply:
 
-`socialite.with(rc.provider).user(rc.code)`
+`socialite.with('facebook').user(rc.code)`
 
 And you will get user data.

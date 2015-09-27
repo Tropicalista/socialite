@@ -129,9 +129,8 @@ component {
 
 		// Look for module setting overrides in parent app and override them.
 		var coldBoxSettings = controller.getSettingStructure();
-		if( structKeyExists( coldBoxSettings, 'oauth' ) 
-			&& structKeyExists( coldBoxSettings[ 'oauth' ], 'settings' ) ) {
-			structAppend( settings.oauth, coldBoxSettings[ 'oauth' ][ 'settings' ], true );
+		if( structKeyExists( coldBoxSettings, 'oauth' ) ) {
+			structAppend( settings.oauth, coldBoxSettings[ 'oauth' ], true );
 		}		
 
 	}

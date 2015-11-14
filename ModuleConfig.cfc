@@ -131,7 +131,7 @@ component {
 		var coldBoxSettings = controller.getSettingStructure();
 		if( structKeyExists( coldBoxSettings, 'oauth' ) ) {
 			structAppend( settings.oauth, coldBoxSettings[ 'oauth' ], true );
-		}		
+		}	
 
 	}
 

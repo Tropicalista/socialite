@@ -7,6 +7,9 @@
 <a href="socialauth/provider/linkedin" class="btn btn-primary">Linkedin</a>
 <a href="socialauth/provider/github" class="btn btn-warning">Github</a>
 
+<cfif structKeyExists(prc, 'user')>
+	<cfdump var="#prc.user#">
+
 <div class="row">
 	<div class="col-md-12">
 		<ul>
@@ -19,8 +22,7 @@
 	</div>
 </div>
 
+</cfif>
+
 </cfoutput>
 
-<cfif structKeyExists(prc, 'user')>
-	<cfdump var="#prc.user#">
-</cfif>

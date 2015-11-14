@@ -2,27 +2,21 @@ component extends="BaseProvider" implements="socialite.models.contracts.IProvide
 
     /**
      * The base Facebook Graph URL.
-     *
      */
     property name="graphUrl";
 
     /**
      * The Graph API version for the request.
-     *
      */
     property name="version";
 
     /**
      * The scopes being requested.
-     *
-     * @var array
      */
     property name="scopes" type="array";
 
     /**
      * Display the dialog in a popup view.
-     *
-     * @var bool
      */
     property name="popup" type="boolean";
 
@@ -31,9 +25,10 @@ component extends="BaseProvider" implements="socialite.models.contracts.IProvide
      */
     function init( clientId, clientSecret, redirectUrl ){
         super.init( arguments.clientId, arguments.clientSecret, arguments.redirectUrl );
-        variables.version = 'v2.3';
+        variables.version = 'v2.5';
         variables.scopes = ['email'];
         variables.graphUrl = 'https://graph.facebook.com';
+        variables.fields = "name,email,gender,verified";
         variables.popup = false;
 
         return this;
@@ -93,7 +88,7 @@ component extends="BaseProvider" implements="socialite.models.contracts.IProvide
     {
         httpService = new http(); 
         httpService.setMethod( "get" ); 
-        httpService.setUrl( variables.graphUrl & '/' & variables.version & '/me?access_token=' & token );
+        httpService.setUrl( variables.graphUrl & '/' & variables.version & '/me?access_token=' & token & '&fields=' & variables.fields );
         response = httpService.send().getPrefix();
 
         return deserializeJson(response.filecontent);
@@ -108,6 +103,7 @@ component extends="BaseProvider" implements="socialite.models.contracts.IProvide
         avatarUrl = variables.graphUrl & '/' & variables.version & '/' & user['id'] & '/picture';
         firstName = structKeyExists( user, 'first_name' ) ? user['first_name'] : "";
         lastName = structKeyExists( user, 'last_name' ) ? user['last_name'] : "";
+        
         return  {
             'id' = user['id'], 
             'nickname' = "", 

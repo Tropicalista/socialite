@@ -24,7 +24,7 @@ Configuration:
 You need to put your clientId, clientSecret and redirect url in config file.
 You can insert your data in ColdBox.cfc:
 
-`
+```
 		// Custom Settings
 		settings = {
 			oauth = {
@@ -50,11 +50,11 @@ You can insert your data in ColdBox.cfc:
 				}
 			}
 		};
-`
+```
 
 or in ModuleConfig:
 
-`
+```
 		// module settings - stored in modules.socialite.settings
 		settings = {
 			oauth = {
@@ -80,7 +80,7 @@ or in ModuleConfig:
 				}*/
 			}
 		};
-`
+```
 
 Usage:
 

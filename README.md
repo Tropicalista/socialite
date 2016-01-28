@@ -82,6 +82,8 @@ or in ModuleConfig:
 		};
 ```
 
+Now simply go to http://yoururl/socialauth.
+
 Usage:
 
 `socialite.init().with('facebook').redirect()`

@@ -2,10 +2,10 @@
 <cfoutput>
 
 <a href="socialauth" class="btn btn-primary">Back to socialbox index</a>
-<a href="socialauth/provider/facebook" class="btn btn-primary">Facebook</a>
-<a href="socialauth/provider/google" class="btn btn-danger">Google</a>
-<a href="socialauth/provider/linkedin" class="btn btn-primary">Linkedin</a>
-<a href="socialauth/provider/github" class="btn btn-warning">Github</a>
+<a href="socialauth/provider/facebook" class="btn btn-block social facebook">Facebook</a>
+<a href="socialauth/provider/google" class="btn btn-block social google">Google</a>
+<a href="socialauth/provider/linkedin" class="btn btn-block social linkedin">Linkedin</a>
+<a href="socialauth/provider/github" class="btn btn-block social github">Github</a>
 
 <cfif structKeyExists(prc, 'user')>
 	<cfdump var="#prc.user#">

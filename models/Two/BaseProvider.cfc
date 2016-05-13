@@ -4,52 +4,40 @@ component {
 
     /**
      * The client ID.
-     *
-     * @var string
      */
     property name="clientId";
  
     /**
      * The client secret.
-     *
-     * @var string
      */
     property name="clientSecret";
     
     /**
      * The redirect URL.
-     *
-     * @var string
      */
     property name="redirectUrl";
 
     /**
      * The scopes being requested.
-     *
-     * @var array
      */
     property name="scopes" type="array";
 
     /**
      * The separating character for the requested scopes.
-     *
-     * @var string
      */
     property name="scopeSeparator";
 
     /**
      * Indicates if the session state should be utilized.
-     *
-     * @var bool
      */
     property name="stateless";
 
     /**
      * Create a new provider instance.
      *
-     * @param  string  clientId
-     * @param  string  clientSecret
-     * @param  string  redirectUrl
+     * @clientId
+     * @clientSecret
+     * @redirectUrl
      */
     public function init( clientId, clientSecret, redirectUrl ){
         variables.clientId = arguments.clientId;
@@ -79,8 +67,8 @@ component {
     /**
      * Get the authentication URL for the provider.
      *
-     * @param  string  url
-     * @param  string  state
+     * @url
+     * @state
      * @return string
      */
     function buildAuthUrlFromBase( serviceUrl, state ){
@@ -111,10 +99,10 @@ component {
      * Format the given scopes.
      *
      * @param  array  scopes
-     * @param  string  scopeSeparator
+     * @scopeSeparator
      * @return string
      */
-    function formatScopes(array scopes, scopeSeparator){
+    function formatScopes( array scopes, scopeSeparator ){
         return ArrayToList( scopes, scopeSeparator );
     }
 
@@ -143,7 +131,7 @@ component {
     /**
      * Get the access token for the given code.
      *
-     * @param  string  code
+     * @code response code from oauth
      * @return string
      */
     public function getAccessToken( string code){
@@ -163,8 +151,8 @@ component {
     /**
      * Get the POST fields for the token request.
      *
-     * @param  string  code
-     * @return array
+     * @code response code from oauth
+     * @return struct with fields
      */
     function getTokenFields( code ){
         return {
@@ -178,7 +166,7 @@ component {
     /**
      * Get the access token from the token response body.
      *
-     * @param  string  body
+     * @body
      * @return string
      */
     function parseAccessToken( body ){
@@ -188,10 +176,10 @@ component {
     /**
      * Set the scopes of the requested access.
      *
-     * @param  array  scopes
+     * @scopes  array of scopes
      * @return this
      */
-    public function scopes(array scopes){
+    public function scopes( array scopes ){
         this.scopes = scopes;
         return this;
     }
@@ -199,7 +187,7 @@ component {
     /**
      * Determine if the provider is operating with state.
      *
-     * @return bool
+     * @return boolean 
      */
     function usesState(){
         return !variables.stateless;
@@ -208,7 +196,7 @@ component {
     /**
      * Determine if the provider is operating as stateless.
      *
-     * @return bool
+     * @return boolean
      */
     function isStateless(){
         return variables.stateless;
@@ -217,14 +205,10 @@ component {
     /**
      * Converts a structure to a URL query string.
      * 
-     * @param struct     Structure of key/value pairs you want converted to URL parameters 
-     * @param keyValueDelim      Delimiter for the keys/values.  Default is the equal sign (=). 
-     * @param queryStrDelim      Delimiter separating url parameters.  Default is the ampersand (&). 
-     * @return Returns a string. 
-     * @author Erki Esken (erki@dreamdrummer.com) 
-     * @version 1, December 17, 2001 
+     * @urlStruct     Structure of key/value pairs you want converted to URL parameters 
+     * @return Returns a string with url parameters. 
      */
-    function StructToQueryString(struct) {
+    function StructToQueryString( urlStruct ) {
         var qstr = "";
         var delim1 = "=";
         var delim2 = "&";
@@ -236,8 +220,8 @@ component {
                 delim1 = Arguments[2];
         }
 
-        for (key in struct) {
-            qstr = ListAppend(qstr, URLEncodedFormat(LCase(key)) & delim1 & URLEncodedFormat(struct[key]), delim2);
+        for ( key in urlStruct ) {
+            qstr = ListAppend( qstr, URLEncodedFormat( LCase(key) ) & delim1 & URLEncodedFormat( urlStruct[key]), delim2 );
         }
         
         return qstr;

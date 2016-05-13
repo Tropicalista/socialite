@@ -6,6 +6,11 @@ component{
 	property name="socialite" inject="SocialiteManager@socialite";
 	property name="user" inject="BaseUser@socialite";
 
+
+	public any function preHandler(param) {
+		dump(getModuleConfig( "socialite" ).entryPoint);abort;
+	}
+
 	function index(event,rc,prc){
 		event.setView("home/index");
 	}

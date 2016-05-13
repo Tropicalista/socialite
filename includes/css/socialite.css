@@ -1,0 +1,192 @@
+.social{
+	color: #fff;
+}
+/* FACEBOOK */
+.facebook { 
+  color: #FFFFFF; 
+  background-color: #3B5998; 
+  border-color: #335190; 
+} 
+ 
+.facebook:hover, 
+.facebook:focus, 
+.facebook:active, 
+.facebook.active, 
+.open .dropdown-toggle.facebook { 
+  color: #FFFFFF; 
+  background-color: #294786; 
+  border-color: #335190; 
+} 
+ 
+.facebook:active, 
+.facebook.active, 
+.open .dropdown-toggle.facebook { 
+  background-image: none; 
+} 
+ 
+.facebook.disabled, 
+.facebook[disabled], 
+fieldset[disabled] .facebook, 
+.facebook.disabled:hover, 
+.facebook[disabled]:hover, 
+fieldset[disabled] .facebook:hover, 
+.facebook.disabled:focus, 
+.facebook[disabled]:focus, 
+fieldset[disabled] .facebook:focus, 
+.facebook.disabled:active, 
+.facebook[disabled]:active, 
+fieldset[disabled] .facebook:active, 
+.facebook.disabled.active, 
+.facebook[disabled].active, 
+fieldset[disabled] .facebook.active { 
+  background-color: #3B5998; 
+  border-color: #335190; 
+} 
+ 
+.facebook .badge { 
+  color: #3B5998; 
+  background-color: #FFFFFF; 
+}
+/* GOOGLE */
+.google { 
+  color: #FFFFFF; 
+  background-color: #DD4B39; 
+  border-color: #D54331; 
+} 
+ 
+.google:hover, 
+.google:focus, 
+.google:active, 
+.google.active, 
+.open .dropdown-toggle.google { 
+  color: #FFFFFF; 
+  background-color: #cb3927; 
+  border-color: #D54331; 
+} 
+ 
+.google:active, 
+.google.active, 
+.open .dropdown-toggle.google { 
+  background-image: none; 
+} 
+ 
+.google.disabled, 
+.google[disabled], 
+fieldset[disabled] .google, 
+.google.disabled:hover, 
+.google[disabled]:hover, 
+fieldset[disabled] .google:hover, 
+.google.disabled:focus, 
+.google[disabled]:focus, 
+fieldset[disabled] .google:focus, 
+.google.disabled:active, 
+.google[disabled]:active, 
+fieldset[disabled] .google:active, 
+.google.disabled.active, 
+.google[disabled].active, 
+fieldset[disabled] .google.active { 
+  background-color: #DD4B39; 
+  border-color: #D54331; 
+} 
+ 
+.google .badge { 
+  color: #DD4B39; 
+  background-color: #FFFFFF; 
+}
+/* GITHUB */
+.github { 
+  color: #FFFFFF; 
+  background-color: #444444; 
+  border-color: #3B3B3B; 
+} 
+ 
+.github:hover, 
+.github:focus, 
+.github:active, 
+.github.active, 
+.open .dropdown-toggle.github { 
+  color: #FFFFFF; 
+  background-color: #303030; 
+  border-color: #3B3B3B; 
+} 
+ 
+.github:active, 
+.github.active, 
+.open .dropdown-toggle.github { 
+  background-image: none; 
+} 
+ 
+.github.disabled, 
+.github[disabled], 
+fieldset[disabled] .github, 
+.github.disabled:hover, 
+.github[disabled]:hover, 
+fieldset[disabled] .github:hover, 
+.github.disabled:focus, 
+.github[disabled]:focus, 
+fieldset[disabled] .github:focus, 
+.github.disabled:active, 
+.github[disabled]:active, 
+fieldset[disabled] .github:active, 
+.github.disabled.active, 
+.github[disabled].active, 
+fieldset[disabled] .github.active { 
+  background-color: #444444; 
+  border-color: #3B3B3B; 
+} 
+ 
+.github .badge { 
+  color: #444444; 
+  background-color: #FFFFFF; 
+}
+/* LINKEDIN */
+.linkedin { 
+  color: #FFFFFF; 
+  background-color: #007BB6; 
+  border-color: #0073AE; 
+} 
+ 
+.linkedin:hover, 
+.linkedin:focus, 
+.linkedin:active, 
+.linkedin.active, 
+.open .dropdown-toggle.linkedin { 
+  color: #FFFFFF; 
+  background-color: #0069A4; 
+  border-color: #0073AE; 
+} 
+ 
+.linkedin:active, 
+.linkedin.active, 
+.open .dropdown-toggle.linkedin { 
+  background-image: none; 
+} 
+ 
+.linkedin.disabled, 
+.linkedin[disabled], 
+fieldset[disabled] .linkedin, 
+.linkedin.disabled:hover, 
+.linkedin[disabled]:hover, 
+fieldset[disabled] .linkedin:hover, 
+.linkedin.disabled:focus, 
+.linkedin[disabled]:focus, 
+fieldset[disabled] .linkedin:focus, 
+.linkedin.disabled:active, 
+.linkedin[disabled]:active, 
+fieldset[disabled] .linkedin:active, 
+.linkedin.disabled.active, 
+.linkedin[disabled].active, 
+fieldset[disabled] .linkedin.active { 
+  background-color: #007BB6; 
+  border-color: #0073AE; 
+} 
+ 
+.linkedin .badge { 
+  color: #007BB6; 
+  background-color: #FFFFFF; 
+}
+.social:link, .social:visited {
+    text-decoration: none;
+    outline: 0;
+    color: #fff;
+}

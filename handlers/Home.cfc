@@ -8,7 +8,7 @@ component{
 
 
 	public any function preHandler(param) {
-		dump(getModuleConfig( "socialite" ).entryPoint);abort;
+		addAsset( event.getModuleRoot( "socialite" ) & "/includes/css/socialite.css" );
 	}
 
 	function index(event,rc,prc){

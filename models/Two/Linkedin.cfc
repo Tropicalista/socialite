@@ -51,7 +51,7 @@ component extends="BaseProvider" implements="socialite.models.contracts.IProvide
      */
     function getTokenFields(code){
         params = super.getTokenFields(code);
-        params.grant_type = 'authorization_code';
+        params["grant_type"] = 'authorization_code';
         return params;
     }
 

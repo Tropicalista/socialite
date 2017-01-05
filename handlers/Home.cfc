@@ -4,6 +4,7 @@
 component{
 
 	property name="socialite" inject="SocialiteManager@socialite";
+    property name="credentials" inject="coldbox:setting:socialite";
 	property name="user" inject="BaseUser@socialite";
 
 
@@ -17,13 +18,14 @@ component{
 
 	function auth(event,rc,prc){
 
-		var social = socialite.init().with(rc.provider);
+		var social = socialite.init( credentials ).with( rc.provider );
+		//dump(social);abort;
 		social.redirect();
 
 	}
 
 	function response(event,rc,prc){
-		prc.user = socialite.with(rc.provider).user(rc.code);
+		prc.user = socialite.init( credentials ).with(rc.provider).user(rc.code);
 		event.setView("home/index");
 	}
 

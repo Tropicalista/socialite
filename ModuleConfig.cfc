@@ -5,26 +5,15 @@ component {
 	this.author 			= "";
 	this.webURL 			= "";
 	this.description 		= "";
-	this.version			= "1.0.0";
-	// If true, looks for views in the parent first, if not found, then in the module. Else vice-versa
-	this.viewParentLookup 	= false;
-	// If true, looks for layouts in the parent first, if not found, then in module. Else vice-versa
-	this.layoutParentLookup = true;
+	this.version			= "1.1.0";
 	// Module Entry Point
 	this.entryPoint			= "socialauth";
 	// Model Namespace
-	this.modelNamespace		= "Socialite";
+	this.modelNamespace		= "socialite";
 	// CF Mapping
-	this.cfmapping			= "Socialite";
-	// Module Dependencies
-	this.dependencies 		= [];
+	this.cfmapping			= "socialite";
 
 	function configure(){
-
-		// parent settings
-		parentSettings = {
-
-		};
 
 		// module settings - stored in modules.name.settings
 		settings = {
@@ -50,16 +39,6 @@ component {
 			}*/
 		};
 
-		// Layout Settings
-		layoutSettings = {
-			defaultLayout = ""
-		};
-
-		// datasources
-		datasources = {
-
-		};
-
 		// SES Routes
 		routes = [
 			// Module Entry Point
@@ -69,24 +48,6 @@ component {
 			// Convention Route
 			{pattern="/:handler/:action?"}
 		];
-
-		// Custom Declared Points
-		interceptorSettings = {
-			customInterceptionPoints = ""
-		};
-
-		// Custom Declared Interceptors
-		interceptors = [
-		];
-
-		// Binder Mappings
-		// binder.map("Alias").to("#moduleMapping#.model.MyService");
-
-		// Look for module setting overrides in parent app and override them.
-		var coldBoxSettings = controller.getSettingStructure();
-		if( structKeyExists( coldBoxSettings, 'oauth' ) ) {
-			structAppend( settings.oauth, coldBoxSettings[ 'oauth' ], true );
-		}	
 
 	}
 

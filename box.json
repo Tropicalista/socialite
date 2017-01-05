@@ -1,8 +1,7 @@
 {
     "name":"Socialite",
-    "version":"1.3.0",
+    "version":"1.4.0",
     "author":"Francesco Pepe",
-    "location":"https://github.com/Tropicalista/socialite",
     "homepage":"https://github.com/Tropicalista/socialite",
     "documentation":"https://github.com/Tropicalista/socialite",
     "repository":{

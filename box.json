@@ -1,3 +1,22 @@
 {
-    "version":"0.1.0"
+    "name":"Socialite",
+    "version":"1.6.0",
+    "author":"Francesco Pepe",
+    "location":"Tropicalista/socialite#v1.6.0",
+    "homepage":"https://github.com/Tropicalista/socialite",
+    "documentation":"https://github.com/Tropicalista/socialite",
+    "repository":{
+        "type":"git",
+        "URL":"https://github.com/Tropicalista/socialite"
+    },
+    "bugs":"https://github.com/Tropicalista/socialite/issues",
+    "slug":"socialite",
+    "shortDescription":"An oauth2 module to perform social login",
+    "description":"",
+    "type":"modules",
+    "scripts":{
+        "postVersion":"package set location='Tropicalista/socialite#v`package version`'",
+        "onRelease":"publish",
+        "postPublish":"!git push && !git push --tags"
+    }
 }

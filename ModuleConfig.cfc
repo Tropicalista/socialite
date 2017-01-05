@@ -28,28 +28,26 @@ component {
 
 		// module settings - stored in modules.name.settings
 		settings = {
-			oauth = {
-				/*facebook = {
-					client_id = "XXXXXXXXXXXXXXXXXXXXXXXXX",
-					client_secret = "XXXXXXXXXXXXXXXXXXXXXXXXX",
-					redirect_url = "http://localhost/socialauth/provider/response/facebook"					
-				},
-				google = {
-					client_id = "XXXXXXXXXXXXXXXXXXXXXXXXX",
-					client_secret = "XXXXXXXXXXXXXXXXXXXXXXXXX",
-					redirect_url = "http://localhost/socialauth/provider/response/google"					
-				},
-				github = {
-					client_id = "XXXXXXXXXXXXXXXXXXXXXXXXX",
-					client_secret = "XXXXXXXXXXXXXXXXXXXXXXXXX",
-					redirect_url = "http://localhost/socialauth/provider/response/github"					
-				},
-				linkedin = {
-					client_id = "XXXXXXXXXXXXXXXXXXXXXXXXX",
-					client_secret = "XXXXXXXXXXXXXXXXXXXXXXXXX",
-					redirect_url = "http://127.0.0.1/socialauth/provider/response/linkedin"					
-				}*/
-			}
+			/*facebook = {
+				client_id = "XXXXXXXXXXXXXXXXXXXXXXXXX",
+				client_secret = "XXXXXXXXXXXXXXXXXXXXXXXXX",
+				redirect_url = "http://localhost/socialauth/provider/response/facebook"					
+			},
+			google = {
+				client_id = "XXXXXXXXXXXXXXXXXXXXXXXXX",
+				client_secret = "XXXXXXXXXXXXXXXXXXXXXXXXX",
+				redirect_url = "http://localhost/socialauth/provider/response/google"					
+			},
+			github = {
+				client_id = "XXXXXXXXXXXXXXXXXXXXXXXXX",
+				client_secret = "XXXXXXXXXXXXXXXXXXXXXXXXX",
+				redirect_url = "http://localhost/socialauth/provider/response/github"					
+			},
+			linkedin = {
+				client_id = "XXXXXXXXXXXXXXXXXXXXXXXXX",
+				client_secret = "XXXXXXXXXXXXXXXXXXXXXXXXX",
+				redirect_url = "http://127.0.0.1/socialauth/provider/response/linkedin"					
+			}*/
 		};
 
 		// Layout Settings

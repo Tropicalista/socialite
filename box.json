@@ -3,85 +3,15 @@
     "version":"1.1.0",
     "author":"Francesco Pepe",
     "location":"https://github.com/Tropicalista/socialite",
-    "directory":"",
-    "createPackageDirectory":true,
-    "packageDirectory":"",
     "homepage":"https://github.com/Tropicalista/socialite",
-    "documentation":"http://wiki.coldbox.org",
+    "documentation":"https://github.com/Tropicalista/socialite",
     "repository":{
         "type":"git",
-        "url":"https://github.com/Tropicalista/socialite"
+        "URL":"git@github.com:Tropicalista/socialite.git"
     },
-    "bugs":"",
+    "bugs":"https://github.com/Tropicalista/socialite/issues",
     "slug":"socialite",
     "shortDescription":"An oauth2 module to perform social login",
     "description":"",
-    "instructions":"",
-    "changelog":"",
-    "type":"modules",
-    "keywords":"oauth2,oauth2 login",
-    "private":false,
-    "engines":[
-        {
-            "type":"railo",
-            "version":">4.1"
-        },
-        {
-            "type":"adobe",
-            "version":">9.02"
-        }
-    ],
-    "defaultEngine":"",
-    "defaultPort":0,
-    "projectURL":"",
-    "license":[
-        {
-            "type":"Apache2",
-            "url":"http://www.apache.org/licenses/LICENSE-2.0.html"
-        }
-    ],
-    "contributors":[
-        
-    ],
-    "dependencies":{
-        "cbstorages":"1.0.0"
-    },
-    "devDependencies":{
-        
-    },
-    "installPaths":{
-        
-    },
-    "ignore":[
-        
-    ],
-    "testbox":{
-        "runner":[
-            {
-                "default":""
-            }
-        ],
-        "labels":[
-            
-        ],
-        "reporter":"",
-        "reporterResults":"",
-        "bundles":[
-            ""
-        ],
-        "directory":{
-            "mapping":"",
-            "recurse":true
-        },
-        "watchers":[
-            
-        ],
-        "notify":{
-            "emails":[
-                
-            ],
-            "growl":"",
-            "url":""
-        }
-    }
+    "type":"modules"
 }

@@ -1,13 +1,13 @@
 {
     "name":"Socialite",
-    "version":"1.2.0",
+    "version":"1.3.0",
     "author":"Francesco Pepe",
     "location":"https://github.com/Tropicalista/socialite",
     "homepage":"https://github.com/Tropicalista/socialite",
     "documentation":"https://github.com/Tropicalista/socialite",
     "repository":{
         "type":"git",
-        "URL":"git@github.com:Tropicalista/socialite.git"
+        "URL":"https://github.com/Tropicalista/socialite"
     },
     "bugs":"https://github.com/Tropicalista/socialite/issues",
     "slug":"socialite",

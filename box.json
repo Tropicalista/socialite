@@ -1,8 +1,8 @@
 {
     "name":"Socialite",
-    "version":"1.7.0",
+    "version":"1.7.1",
     "author":"Francesco Pepe",
-    "location":"Tropicalista/socialite#v1.7.0",
+    "location":"Tropicalista/socialite#v1.7.1",
     "homepage":"https://github.com/Tropicalista/socialite",
     "documentation":"https://github.com/Tropicalista/socialite",
     "repository":{
@@ -15,7 +15,6 @@
     "description":"",
     "type":"modules",
     "scripts":{
-        "postVersion":"package set location='Tropicalista/socialite#v`package version`'",
-        "onRelease":"publish"
+        "postVersion":"package set location='Tropicalista/socialite#v`package version`'"
     }
 }

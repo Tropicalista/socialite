@@ -52,39 +52,10 @@ You can insert your data in ColdBox.cfc:
 		};
 ```
 
-or in ModuleConfig:
-
-```
-		// module settings - stored in modules.socialite.settings
-		settings = {
-			oauth = {
-				/*facebook = {
-					client_id = "XXXXXXXXXXXXXXXXXXXXXXXXX",
-					client_secret = "XXXXXXXXXXXXXXXXXXXXXXXXX",
-					redirect_url = "http://localhost/socialauth/provider/response/facebook"					
-				},
-				google = {
-					client_id = "XXXXXXXXXXXXXXXXXXXXXXXXX",
-					client_secret = "XXXXXXXXXXXXXXXXXXXXXXXXX",
-					redirect_url = "http://localhost/socialauth/provider/response/google"					
-				},
-				github = {
-					client_id = "XXXXXXXXXXXXXXXXXXXXXXXXX",
-					client_secret = "XXXXXXXXXXXXXXXXXXXXXXXXX",
-					redirect_url = "http://localhost/socialauth/provider/response/github"					
-				},
-				linkedin = {
-					client_id = "XXXXXXXXXXXXXXXXXXXXXXXXX",
-					client_secret = "XXXXXXXXXXXXXXXXXXXXXXXXX",
-					redirect_url = "http://127.0.0.1/socialauth/provider/response/linkedin"					
-				}*/
-			}
-		};
-```
-
-Now simply go to http://yoururl/socialauth.
 
 Usage:
+
+In your handler 
 
 `socialite.init().with('facebook').redirect()`
 

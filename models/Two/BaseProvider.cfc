@@ -1,6 +1,6 @@
 component {
 
-    property name="sessionStorage" inject="sessionStorage@cbstorages";
+    property name="persistentData" inject="PersistentData@socialite";
 
     /**
      * The client ID.
@@ -58,8 +58,8 @@ component {
         variables.state = "";
 
         if (this.usesState()) {
-            variables.state = Hmac( Now().getTime() & sessionStorage.getVar("_token"), "state");
-            sessionStorage.setVar( "state", variables.state );
+            variables.state = Hmac( Now().getTime() & persistentData.get("_token"), "state");
+            persistentData.set( "state", variables.state );
         }
         return location( this.getAuthUrl( state ), false );
     }

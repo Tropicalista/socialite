@@ -19,7 +19,7 @@ Otherwise download from forgebox
 
 http://www.coldbox.org/forgebox/view/Socialite
 
-Configuration:
+# Configuration:
 
 You need to put your clientId, clientSecret and redirect url in config file.
 You can insert your data in ColdBox.cfc:
@@ -53,7 +53,7 @@ You can insert your data in ColdBox.cfc:
 ```
 
 
-Usage:
+# Usage:
 
 In your handler 
 

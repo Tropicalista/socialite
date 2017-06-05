@@ -102,7 +102,7 @@ component extends="BaseProvider" implements="socialite.models.contracts.IProvide
         return  {
             'id' = user['id'], 
             'nickname' = "", 
-            'name' = structKeyExists( user, 'first_name' ) ? user['first_name'] : "",
+            'name' = structKeyExists( user, 'name' ) ? user['name'] : "",
             'email' = structKeyExists( user, 'email' ) ? user['email'] : "", 
             'avatar' = avatarUrl & '?type=normal',
             'avatar_original' = avatarUrl & '?width=1920'

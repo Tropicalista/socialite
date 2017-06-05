@@ -25,7 +25,7 @@ component extends="BaseProvider" implements="socialite.models.contracts.IProvide
      */
     function init( clientId, clientSecret, redirectUrl ){
         super.init( arguments.clientId, arguments.clientSecret, arguments.redirectUrl );
-        variables.version = 'v2.6';
+        variables.version = 'v2.9';
         variables.scopes = ['email'];
         variables.graphUrl = 'https://graph.facebook.com';
         variables.fields = "name,email,gender,verified";

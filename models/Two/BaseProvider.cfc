@@ -1,36 +1,13 @@
 component {
 
     property name="persistentData" inject="PersistentData@socialite";
-
-    /**
-     * The client ID.
-     */
-    property name="clientId";
- 
-    /**
-     * The client secret.
-     */
-    property name="clientSecret";
     
-    /**
-     * The redirect URL.
-     */
-    property name="redirectUrl";
-
-    /**
-     * The scopes being requested.
-     */
-    property name="scopes" type="array";
-
-    /**
-     * The separating character for the requested scopes.
-     */
-    property name="scopeSeparator";
-
-    /**
-     * Indicates if the session state should be utilized.
-     */
-    property name="stateless";
+    property name="clientId"; // The client ID.    
+    property name="clientSecret"; // The client secret.    
+    property name="redirectUrl"; // The redirect URL.    
+    property name="scopes" type="array"; // The scopes being requested.    
+    property name="scopeSeparator"; // The separating character for the requested scopes.    
+    property name="stateless"; // Indicates if the session state should be utilizd.
 
     /**
      * Create a new provider instance.
@@ -69,7 +46,6 @@ component {
      *
      * @url
      * @state
-     * @return string
      */
     function buildAuthUrlFromBase( serviceUrl, state ){
         queryString = StructToQueryString( this.getCodeFields( state ) );

@@ -3,40 +3,12 @@
 */
 component accessors="true" {
 
-    /**
-     * The unique identifier for the user.
-     *
-     * @var mixed
-     */
-    property name="id";
 
-    /**
-     * The user's nickname / username.
-     *
-     * @var string
-     */
-    property name="nickname";
-
-    /**
-     * The user's full name.
-     *
-     * @var string
-     */
-    property name="name";
-
-    /**
-     * The user's e-mail address.
-     *
-     * @var string
-     */
-    property name="email";
-
-    /**
-     * The user's avatar image URL.
-     *
-     * @var string
-     */
-    property name="avatar";
+    property name="id"; //The unique identifier for the user.
+    property name="nickname"; //The user's nickname / username.
+    property name="name"; //The user's full name.
+    property name="email"; //The user's e-mail address.
+    property name="avatar"; //The user's avatar image URL.
 
 	/**
 	* Constructor
@@ -69,10 +41,11 @@ component accessors="true" {
     {
         return this;
     }
+    
     /**
      * Determine if the given raw user attribute exists.
      *
-     * @param  string  offset
+     * @offset  string  offset
      */
     public function offsetExists(offset)
     {

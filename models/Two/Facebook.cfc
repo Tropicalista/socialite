@@ -75,11 +75,7 @@ component extends="BaseProvider" implements="socialite.models.contracts.IProvide
      * Parse the access token
      */
     function parseAccessToken( token ){
-        var parts = listToArray( arguments.token, "&");
-        var at = parts[1];
-        var access_token = listGetAt(at, 2, "=");
-
-        return access_token;
+        return deserializeJSON( arguments.token ).access_token;
     }
 
     /**

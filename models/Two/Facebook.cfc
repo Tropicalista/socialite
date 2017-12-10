@@ -83,10 +83,10 @@ component extends="BaseProvider" implements="socialite.models.contracts.IProvide
      */
     function getUserByToken( token )
     {
-        httpService = new http(); 
+        var httpService = new http(); 
         httpService.setMethod( "get" ); 
         httpService.setUrl( variables.graphUrl & '/' & variables.version & '/me?access_token=' & token & '&fields=' & variables.fields );
-        response = httpService.send().getPrefix();
+        var response = httpService.send().getPrefix();
 
         return deserializeJson(response.filecontent);
 

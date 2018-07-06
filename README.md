@@ -55,12 +55,52 @@ You can insert your data in ColdBox.cfc:
 
 # Usage:
 
-In your handler 
+First create routes:
+
+```
+		route(pattern="/provider/response/:provider", target="socialite.response");
+		route(pattern="/provider/:provider", target="socialite.auth");
+
+```
+
+In your view put the code for login button:
+
+`<a href="#event.buildLink( 'provider/facebook' )#">Facebook</a>`
+
+
+In your handler:
 
 `socialite.init().with('facebook').redirect()`
 
 This will prompt you to authentication page. Then simply:
 
 `socialite.with('facebook').user(rc.code)`
+
+A simple example:
+
+```
+
+component {
+
+	property name="socialite" inject="SocialiteManager@socialite";
+    property name="credentials" inject="coldbox:modulesettings:socialite";
+	property name="user" inject="BaseUser@socialite";
+
+	function index(event,rc,prc){
+		event.setView("socialite/index");
+	}
+
+	function auth(event,rc,prc){
+		var social = socialite.init( credentials ).with( rc.provider );
+		social.redirect();
+	}
+
+	function response(event,rc,prc){
+		prc.user = socialite.init( credentials ).with(rc.provider).user(rc.code);
+		event.setView("socialite/index");
+	}
+
+}
+```
 
 And you will get user data.

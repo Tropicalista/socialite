@@ -21,9 +21,9 @@ component extends="BaseProvider" implements="socialite.models.contracts.IProvide
     function init( clientId, clientSecret, redirectUrl ){
         super.init( arguments.clientId, arguments.clientSecret, arguments.redirectUrl );
         variables.scopes = [
-            'https://www.googleapis.com/auth/plus.me',
-            'https://www.googleapis.com/auth/plus.login',
-            'https://www.googleapis.com/auth/plus.profile.emails.read',
+            "https://www.googleapis.com/auth/plus.me",
+            "https://www.googleapis.com/auth/plus.login",
+            "https://www.googleapis.com/auth/plus.profile.emails.read",
         ];
         variables.scopeSeparator = " ";
 
@@ -34,14 +34,14 @@ component extends="BaseProvider" implements="socialite.models.contracts.IProvide
      * Get auth url
      */
     function getAuthUrl(state){
-        return this.buildAuthUrlFromBase('https://accounts.google.com/o/oauth2/auth', state);
+        return this.buildAuthUrlFromBase( "https://accounts.google.com/o/oauth2/auth", state );
     }
 
     /**
      * Get token url
      */
     function getTokenUrl(){
-        return 'https://accounts.google.com/o/oauth2/token';
+        return "https://accounts.google.com/o/oauth2/token";
     }
 
     /**
@@ -52,50 +52,45 @@ component extends="BaseProvider" implements="socialite.models.contracts.IProvide
      */
     public function getAccessToken(code){
         var params = this.getTokenFields( arguments.code );
+        params.grant_type = "authorization_code";
 
-        httpService = new http(); 
-        httpService.setMethod( "post" ); 
-        httpService.setUrl( this.getTokenUrl() );
+        var req = hyper.setMethod( "POST" )
+                        .setUrl( this.getTokenUrl() )
+                        .setBody( params )
+                        .asFormFields()
+                        .send();
 
-        httpService.addParam(type="formfield",name="client_id",value="#params.client_id#");
-        httpService.addParam(type="formfield",name="client_secret",value="#params.client_secret#");
-        httpService.addParam(type="formfield",name="code",value="#params.code#");
-        httpService.addParam(type="formfield",name="redirect_uri",value="#params.redirect_uri#");
-        httpService.addParam(type="formfield",name="grant_type",value="authorization_code");
-        response = httpService.send().getPrefix();
-
-        return this.parseAccessToken( response.filecontent );
+        return this.parseAccessToken( req.getData() );
 
     }
 
     /**
      * Get user by token
      */
-    function getUserByToken( token )
-    {
-        httpService = new http(); 
-        httpService.setMethod( "get" ); 
-        httpService.setUrl( "https://www.googleapis.com/plus/v1/people/me?prettyPrint=false" );
-        httpService.addParam(type="header",name="Accept",value="application/json");
-        httpService.addParam(type="header",name="Authorization",value="Bearer #arguments.token.access_token#");
+    function getUserByToken( token ){
 
-        response = httpService.send().getPrefix();
+        var req = hyper.setMethod( "GET" )
+                        .setUrl( "https://www.googleapis.com/plus/v1/people/me?prettyPrint=false" )
+                        .withHeaders( { 
+                            "Accept" = "application/json", 
+                            "Authorization" = "Bearer #arguments.token.access_token#", 
+                        } )
+                        .send();
 
-        return deserializeJson(response.filecontent);
+        return deserializeJson( req.getData() );
 
     }
 
     /**
      * Map user
      */
-    function mapUserToObject( user )
-    {
+    function mapUserToObject( user ){
         return {
-            id = user['id'], 
-            nickname = structKeyExists( user, 'nickname' ) ? user['nickname'] : "", 
-            name = user['displayName'],
-            email = user['emails'][1]['value'], 
-            avatar = user['image']['url'],
+            id = user["id"], 
+            nickname = structKeyExists( user, "nickname" ) ? user["nickname"] : "", 
+            name = user["displayName"],
+            email = user["emails"][1]["value"], 
+            avatar = user["image"]["url"],
         };
     }
 }

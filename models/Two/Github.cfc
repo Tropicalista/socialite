@@ -39,11 +39,11 @@ component extends="BaseProvider" implements="socialite.models.contracts.IProvide
      * @return string
      */
     function parseAccessToken( body ){
-        token = ToString( ToBinary( response.filecontent ) );
+        var token = ToString( ToBinary( body ) );
 
-        parts = listToArray(token, "&");
-        at = parts[1];
-        access_token = listGetAt(at, 2, "=");
+        var parts = listToArray(token, "&");
+        var at = parts[1];
+        var access_token = listGetAt(at, 2, "=");
         return access_token;
     }
 
@@ -51,15 +51,14 @@ component extends="BaseProvider" implements="socialite.models.contracts.IProvide
      * Get user by token
      */
     function getUserByToken( token ){
-        userUrl = 'https://api.github.com/user?access_token=' & token;
-        httpService = new http(); 
-        httpService.setMethod( "get" ); 
-        httpService.setUrl( userUrl );
-        httpService.addParam( type="header", name="Accept", value="application/vnd.github.v3+json" );
+        var userUrl = 'https://api.github.com/user?access_token=' & token;
 
-        response = httpService.send().getPrefix();
+        var req = hyper.setMethod( "GET" )
+                        .setHeader( name="Accept", value="application/vnd.github.v3+json" )
+                        .setUrl( userUrl )
+                        .send();
 
-        user = deserializeJson(response.filecontent);
+        var user = deserializeJson( req.getData() );
 
         if (ArrayFind( variables.scopes, 'user:email' )) {
             user['email'] = this.getEmailByToken(token);
@@ -74,20 +73,20 @@ component extends="BaseProvider" implements="socialite.models.contracts.IProvide
      * @return string|null
      */
     function getEmailByToken(token){
-        emailsUrl = 'https://api.github.com/user/emails?access_token=' & token;
+        var emailsUrl = 'https://api.github.com/user/emails?access_token=' & token;
         try {
-            httpService = new http(); 
-            httpService.setMethod( "get" ); 
-            httpService.setUrl( emailsUrl );
-            httpService.addParam( type="header", name="Accept", value="application/vnd.github.v3+json" );
-            response = httpService.send().getPrefix();
+
+            var req = hyper.setMethod( "GET" )
+                            .setHeader( name="Accept", value="application/vnd.github.v3+json" )
+                            .setUrl( emailsUrl )
+                            .send();
 
         } catch (Exception e) {
             return;
         }
-        emails = deserializeJson(response.filecontent);
-        for(email in emails) {
-            if (email['primary'] AND email['verified']) {
+        var emails = deserializeJson( req.getData() );
+        for( email in emails ) {
+            if ( email['primary'] AND email['verified'] ) {
                 return email['email'];
             }
         }

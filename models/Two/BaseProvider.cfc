@@ -1,6 +1,7 @@
 component {
 
     property name="persistentData" inject="PersistentData@socialite";
+    property name="hyper" inject="HyperBuilder@Hyper";
     
     property name="clientId"; // The client ID.    
     property name="clientSecret"; // The client secret.    
@@ -59,7 +60,7 @@ component {
      * @return array
      */
     function getCodeFields( state = javaCast( "null", 0 ) ){
-        fields = {
+        var fields = {
                     'client_id' = variables.clientId, 
                     'redirect_uri' = variables.redirectUrl,
                     'scope' = variables.formatScopes(variables.scopes, variables.scopeSeparator),
@@ -111,16 +112,15 @@ component {
      * @return string
      */
     public function getAccessToken( string code){
-        params = this.getTokenFields( arguments.code );
-        httpService = new http(); 
-        httpService.setMethod( "post" ); 
-        httpService.setUrl( this.getTokenUrl() );
-        for(key in params) {
-            httpService.addParam(type="formfield",name="#key#",value="#params[key]#");
-        }
+        var params = this.getTokenFields( arguments.code );
 
-        response = httpService.send().getPrefix();
-        return this.parseAccessToken(response.filecontent);
+        var req = hyper.setMethod( "POST" )
+                        .setUrl( this.getTokenUrl() )
+                        .setBody( params )
+                        .asFormFields()
+                        .send();
+
+        return this.parseAccessToken( req.getData() );
 
     }
 
@@ -132,10 +132,10 @@ component {
      */
     function getTokenFields( code ){
         return {
-            'client_id' = variables.clientId, 
-            'client_secret' = variables.clientSecret,
-            'code' = code, 
-            'redirect_uri' = variables.redirectUrl
+            "client_id" = variables.clientId, 
+            "client_secret" = variables.clientSecret,
+            "code" = arguments.code, 
+            "redirect_uri" = variables.redirectUrl
         };
     }
 

@@ -58,17 +58,13 @@ component extends="BaseProvider" implements="socialite.models.contracts.IProvide
     public function getAccessToken( code) {
         var params = this.getTokenFields( arguments.code );
 
-        httpService = new http(); 
-        httpService.setMethod( "post" ); 
-        httpService.setUrl( this.getTokenUrl() );
+        var req = hyper.setMethod( "POST" )
+                        .setUrl( this.getTokenUrl() )
+                        .setBody( params )
+                        .asFormFields()
+                        .send();
 
-        httpService.addParam(type="formfield",name="client_id",value="#params.client_id#");
-        httpService.addParam(type="formfield",name="client_secret",value="#params.client_secret#");
-        httpService.addParam(type="formfield",name="code",value="#params.code#");
-        httpService.addParam(type="formfield",name="redirect_uri",value="#params.redirect_uri#");
-        response = httpService.send().getPrefix();
-
-        return this.parseAccessToken( response.filecontent );
+        return this.parseAccessToken( req.getData() );
     }
 
     /**
@@ -83,12 +79,11 @@ component extends="BaseProvider" implements="socialite.models.contracts.IProvide
      */
     function getUserByToken( token )
     {
-        var httpService = new http(); 
-        httpService.setMethod( "get" ); 
-        httpService.setUrl( variables.graphUrl & '/' & variables.version & '/me?access_token=' & token & '&fields=' & variables.fields );
-        var response = httpService.send().getPrefix();
+        var req = hyper.setMethod( "GET" )
+                        .setUrl( variables.graphUrl & '/' & variables.version & '/me?access_token=' & token & '&fields=' & variables.fields )
+                        .send();
 
-        return deserializeJson(response.filecontent);
+        return deserializeJson( req.getData() );
 
     }
 

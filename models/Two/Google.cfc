@@ -52,7 +52,7 @@ component extends="BaseProvider" implements="socialite.models.contracts.IProvide
      */
     public function getAccessToken(code){
         var params = this.getTokenFields( arguments.code );
-        params.grant_type = "authorization_code";
+        params["grant_type"] = "authorization_code";
 
         var req = hyper.setMethod( "POST" )
                         .setUrl( this.getTokenUrl() )
@@ -85,6 +85,7 @@ component extends="BaseProvider" implements="socialite.models.contracts.IProvide
      * Map user
      */
     function mapUserToObject( user ){
+
         return {
             id = user["id"], 
             nickname = structKeyExists( user, "nickname" ) ? user["nickname"] : "", 

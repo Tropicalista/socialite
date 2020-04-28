@@ -17,7 +17,7 @@ You can install with commandbox
 
 Otherwise download from forgebox
 
-http://www.coldbox.org/forgebox/view/Socialite
+https://forgebox.io/view/socialite
 
 # Configuration:
 
